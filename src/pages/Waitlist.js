@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./../styles/Waitlist.css";
+import IMAGE from "./../images/Homepage.png"
 
 const Waitlist = () => {
   const [email, setEmail] = useState("");
@@ -74,7 +75,7 @@ const Waitlist = () => {
           <div className="image-container">
             <div className="image-bg-left">
               <div className="image-bg">
-                <img className="homepage" src="./homepage.png" alt="" />
+                <img className="homepage" src={IMAGE} alt="" />
               </div>
             </div>
           </div>
