@@ -196,9 +196,12 @@ p {
         line-height: 1.5;
         color: #ffffff;
     }
+    .waitlist-text {
+        margin-top: 40px;
+    }
 
     .header-text {
-        width: 28vh;
+        width: 30vh;
         font-weight: 600;
         font-size: 56px;
         line-height: 60px;
@@ -212,6 +215,7 @@ p {
         margin: auto;
         font-weight: 300;
         color: #E5FCF5;
+        font-size: 16px;
     }
 
     .image-bg {
@@ -230,7 +234,7 @@ p {
         width: 31vh;
         border-radius: 16px;
         margin: auto;
-        margin-top: 200px;
+        margin-top: 160px;
         transform: rotate(355deg);
     }
 
