@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import "./../styles/Waitlist.css";
-import IMAGE from "./../images/Homepage.png"
+import IMAGE from "./../images/Homepage.png";
+import { Modal, ModalHeader } from "reactstrap";
 
 const Waitlist = () => {
-  const [email, setEmail] = useState("");
+  const [modal, openModal] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // alert(`The name you entered was: ${email}`);
-    console.log(`${email}`);
-  };
   return (
     <div>
       <div className="container">
@@ -61,17 +57,25 @@ const Waitlist = () => {
               <span></span>
             </div>
           </div>
-          <button className="Button">Get Early Access</button>
-          {/* <form action="submit">
-            <label htmlFor="Enter your email address">
-              <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </label>
-            <input type="submit" />
-          </form> */}
+
+          {/* Modal */}
+          <div>
+            <Modal size="lg" isOpen={modal} toggle={() => openModal(!modal)}>
+              <ModalHeader toggle={() => openModal(!modal)}>
+                Fill the form
+              </ModalHeader>
+            </Modal>
+
+            {/* Button */}
+          </div>
+          <button
+            className="Button"
+            onClick={() => {
+              openModal(true);
+            }}
+          >
+            Get Early Access
+          </button>
           <div className="image-container">
             <div className="image-bg-left">
               <div className="image-bg">

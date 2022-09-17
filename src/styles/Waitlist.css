@@ -256,8 +256,8 @@ p {
         /* background-color: yellow; */
     }
     .Patterns-dots{
-        width: 18.44vh;
-        height: 30vh;
+        width: 12vh;
+        height: 16vh;
         display: -webkit-flex;
         display: flex;
         -webkit-flex-direction: column;
@@ -266,11 +266,11 @@ p {
         justify-content: space-around;
         -webkit-transform: translate(1.56vh,-6.22vh);
         transform: translate(1.56vh,-6.22vh);
-        /* transform: rotate(30deg); */
+        transform: rotate(30deg);
     }
     .Landing-dots {
         position: absolute;
-        left: 12.5vh;
+        left: -2.5vh;
         top: 20vh;
         z-index: 15;
     }
