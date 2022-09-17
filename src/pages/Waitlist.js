@@ -34,6 +34,7 @@ const Waitlist = () => {
       setEmail("");
       setFirstName("");
       setLastName("");
+      openModal(false);
     } else alert("Empty Fields");
   };
 
@@ -102,6 +103,7 @@ const Waitlist = () => {
                 toggle={() => openModal(!modal)}
               >
                 <ModalHeader
+                  close={null}
                   className="modal-header"
                   toggle={() => openModal(!modal)}
                 >
