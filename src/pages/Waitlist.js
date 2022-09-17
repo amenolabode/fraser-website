@@ -5,27 +5,37 @@ import IMAGE from "./../images/Homepage.png";
 import { Col, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import { db } from "../components/Firebase";
 
-
 const Waitlist = () => {
   const [modal, openModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
+  //   console.log(firstName);
   const handleSubmit = (e) => {
     e.preventDefault();
-    db.collection("waitlist")
-      .add({
-        firstname: firstName,
-        lastname: lastName,
-        email: email,
-      })
-      .then(() => {
-        alert("Welcome to the good side");
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+    if (
+      firstName.toString.length > 0 &&
+      lastName.toString.length > 0 &&
+      email.toString.length > 0
+    ) {
+      db.collection("waitlist")
+        .add({
+          firstname: firstName,
+          lastname: lastName,
+          email: email,
+        })
+        .then(() => {
+          alert("Welcome to the good side");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+
+      setEmail("");
+      setFirstName("");
+      setLastName("");
+    } else alert("Empty Fields");
   };
 
   return (
@@ -96,12 +106,9 @@ const Waitlist = () => {
                   className="modal-header"
                   toggle={() => openModal(!modal)}
                 >
-                  <h2 className="modal-header-text">
-                    Gain access to the best transport deals once we launch 😊
-                  </h2>
                   <p className="modal-header-subtitle">
                     Fraser goes the extra mile to ensure your convenience and
-                    safety without breaking the bank.
+                    safety without breaking the bank.😊
                     <br />
                     <br />
                     P.S. Get free trips when you join our waitlist
@@ -151,16 +158,16 @@ const Waitlist = () => {
                         </div>
                       </Col>
                     </Row>
+                    <button
+                      className="modal-button Button"
+                      // onClick={() => {
+                      //   handleSubmit();
+                      // }}
+                      type="submit"
+                    >
+                      Join Waitlist
+                    </button>
                   </form>
-                  <button
-                    className="modal-button Button"
-                    onClick={() => {
-                      openModal(true);
-                    }}
-                    type="submit"
-                  >
-                    Join Waitlist
-                  </button>
                 </ModalBody>
               </Modal>
 

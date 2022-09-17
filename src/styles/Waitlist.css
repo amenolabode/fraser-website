@@ -149,13 +149,15 @@ p {
     margin-bottom: 24px;
 }
 
+.Button:hover{
+    background-color: var(--green);
+}
+
 .modal {
     position: fixed;
     /* background-color: #000000; */
     /* color: #10c10a; */
 }
-
-
 
 .modal-button {
     background-color: #10c10a;
@@ -170,9 +172,8 @@ p {
     width: 100%;
 }
 
-
 .col-lg-12{
-    padding-bottom: 12px;
+    padding-bottom: 24px;
 }
 
 .form-label {
@@ -180,7 +181,7 @@ p {
     padding: 0;
     margin: 0;
     font-size: 14px;
-    padding-left: 4px;
+    padding-bottom: 2px;
     color: #3c3c3c;
 }
 
@@ -207,7 +208,9 @@ p {
 .modal-header{
     align-items: flex-start;
 }
-
+input{
+    padding-left: 24px;
+}
 
 .Patterns-dots {
     width: 18.44vh;
