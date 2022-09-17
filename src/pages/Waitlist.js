@@ -11,30 +11,26 @@ const Waitlist = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
-  //   console.log(firstName);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      firstName.toString.length > 0 &&
-      lastName.toString.length > 0 &&
-      email.toString.length > 0
-    ) {
-      db.collection("waitlist")
-        .add({
-          firstname: firstName,
-          lastname: lastName,
-          email: email,
-        })
-        .then(() => {
-          alert("Welcome to the good side");
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
+    if (firstName.length !== 0 && lastName.length !== 0 && email.length !== 0) {
+    //   alert("firebase runs");
+        db.collection("waitlist")
+          .add({
+            firstname: firstName,
+            lastname: lastName,
+            email: email,
+          })
+          .then(() => {
+            alert("Welcome to the good side");
+          })
+          .catch((error) => {
+            alert(error.message);
+          });
 
-      setEmail("");
-      setFirstName("");
-      setLastName("");
+        setEmail("");
+        setFirstName("");
+        setLastName("");
     } else alert("Empty Fields");
   };
 
@@ -146,15 +142,15 @@ const Waitlist = () => {
                       </Col>
                       <Col lg={12}>
                         <div className="form-field">
-                          <label
-                            className="form-label"
-                            htmlFor="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                          >
+                          <label className="form-label" htmlFor="email">
                             Email
                           </label>
-                          <input type="email" className="form-control" />
+                          <input
+                            type="email"
+                            className="form-control"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
                         </div>
                       </Col>
                     </Row>
