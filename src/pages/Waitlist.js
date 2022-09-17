@@ -4,6 +4,8 @@ import STYLE from "./../styles/Waitlist.css";
 import IMAGE from "./../images/Homepage.png";
 import { Col, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import { db } from "../components/Firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { async } from "@firebase/util";
 
 const Waitlist = () => {
   const [modal, openModal] = useState(false);
@@ -11,26 +13,27 @@ const Waitlist = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const usersCollectionRef = collection(db, "users");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (firstName.length !== 0 && lastName.length !== 0 && email.length !== 0) {
-    //   alert("firebase runs");
-        db.collection("waitlist")
-          .add({
-            firstname: firstName,
-            lastname: lastName,
-            email: email,
-          })
-          .then(() => {
-            alert("Welcome to the good side");
-          })
-          .catch((error) => {
-            alert(error.message);
-          });
+      //   alert("firebase runs");
+      await addDoc(usersCollectionRef, {
+        firstname: firstName,
+        lastname: lastName,
+        email: email,
+      })
+        .then(() => {
+          alert("Welcome to the good side");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
 
-        setEmail("");
-        setFirstName("");
-        setLastName("");
+      setEmail("");
+      setFirstName("");
+      setLastName("");
     } else alert("Empty Fields");
   };
 
@@ -55,7 +58,7 @@ const Waitlist = () => {
                 and affordably, use Fraser.
               </p>
             </div>
-            <div class="Patterns-dots Landing-dots Patterns_animatedIn__2wrQM">
+            <div className="Patterns-dots Landing-dots Patterns_animatedIn__2wrQM">
               <div>
                 <span></span>
                 <span></span>
@@ -95,7 +98,7 @@ const Waitlist = () => {
                 className="form-modal"
                 size="lg"
                 isOpen={modal}
-                centered="true"
+                centered={true}
                 toggle={() => openModal(!modal)}
               >
                 <ModalHeader
