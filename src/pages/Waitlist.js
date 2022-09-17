@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./../styles/Waitlist.css";
 import IMAGE from "./../images/Homepage.png";
-import { Modal, ModalHeader } from "reactstrap";
+import { Col, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 
 const Waitlist = () => {
   const [modal, openModal] = useState(false);
@@ -60,10 +60,48 @@ const Waitlist = () => {
 
           {/* Modal */}
           <div>
-            <Modal size="lg" isOpen={modal} toggle={() => openModal(!modal)}>
+            <Modal className="form-modal" size="lg" isOpen={modal} toggle={() => openModal(!modal)}>
               <ModalHeader toggle={() => openModal(!modal)}>
                 Fill the form
               </ModalHeader>
+              <ModalBody>
+                <form>
+                    <Row>
+                        <Col lg={12}>
+                            <div>
+                                <label htmlFor="name">
+                                    First name
+                                </label>
+                                <input type="text" className="form-control" placeholder="Enter your firstname"/>
+                            </div>
+                        </Col>
+                        <Col lg={12}>
+                            <div>
+                                <label htmlFor="name">
+                                    Last name
+                                </label>
+                                <input type="text" className="form-control" placeholder="Enter your last/surname"/>
+                            </div>
+                        </Col>
+                        <Col lg={12}>
+                            <div>
+                                <label htmlFor="email">
+                                    Email
+                                </label>
+                                <input type="email" className="form-control" placeholder="Enter your email"/>
+                            </div>
+                        </Col>
+                    </Row>
+                </form>
+                <button
+            className="modal-button Button"
+            onClick={() => {
+              openModal(true);
+            }}
+          >
+            Join Waitlist
+          </button>
+              </ModalBody>
             </Modal>
 
             {/* Button */}

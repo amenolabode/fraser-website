@@ -139,6 +139,19 @@ p {
     margin-top: 68px;
 }
 
+
+
+.modal-button{
+    background-color: #10c10a;
+    color: white;
+    padding: 12px 14px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-top: 68px;
+}
 .Patterns-dots{
     width: 18.44vh;
     height: 30vh;
