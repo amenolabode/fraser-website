@@ -9,23 +9,27 @@
 }
 
 :root {
-    --green: rgba(1, 217, 91, 1);
+    --green: #00ff6a;
+    --black: #000000;
+    --sBlack: #3c3c3c;
+    --sWhite: #E5FCF5;
+    --white: #ffffff;
 
 }
 
 p {
     font-size: 22px;
     font-weight: 300;
-    color: #E5FCF5;
+    color: var(--sWhite);
 }
 
 .waitlist-body {
-    background-color: #000000;
+    background-color: var(--black);
     height: 100vh;
 }
 
 .container {
-    background-color: #000000;
+    background-color: var(--black);
     height: 100vh;
     overflow: hidden;
     width: 100%;
@@ -53,7 +57,7 @@ p {
     display: flex;
     font-size: 14px;
     line-height: 1.5;
-    color: #000000;
+    color: var(--black);
     align-items: center;
     padding: 16px;
     height: 120px;
@@ -78,7 +82,7 @@ p {
 }
 
 .header-text {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 88px;
     line-height: 108px;
     letter-spacing: -5px;
@@ -90,7 +94,7 @@ p {
     padding-top: 8px;
     width: 36rem;
     margin: auto;
-    color: #E5FCF5;
+    color: var(--sWhite);
     font-weight: 300;
 }
 
@@ -118,7 +122,7 @@ p {
 }
 
 .image-bg-left {
-    background-color: #E5FCF5;
+    background-color: var(--sWhite);
     width: 41vh;
     border-radius: 16px;
     margin: auto;
@@ -137,8 +141,8 @@ p {
 }
 
 .Button {
-    background-color: #10c10a;
-    color: white;
+    background-color: var(--green);
+    color: var(--black);
     padding: 24px 72px;
     font-size: 18px;
     font-weight: 500;
@@ -150,18 +154,18 @@ p {
 }
 
 .Button:hover{
-    background-color: var(--green);
+    background-color: #0be466;
 }
 
 .modal {
     position: fixed;
-    /* background-color: #000000; */
-    /* color: #10c10a; */
+    /* background-color: var(--black); */
+    /* color: var(--green); */
 }
 
 .modal-button {
-    background-color: #10c10a;
-    color: white;
+    background-color: var(--green);
+    color: var(--black);
     padding: 12px 14px;
     font-size: 16px;
     font-weight: 500;
@@ -182,7 +186,7 @@ p {
     margin: 0;
     font-size: 14px;
     padding-bottom: 2px;
-    color: #3c3c3c;
+    color: var(--sBlack);
 }
 
 .form-control {
@@ -199,7 +203,7 @@ p {
     /* width: 60rem; */
 }
 .modal-header-subtitle{
-    color: #3c3c3c;
+    color: var(--sBlack);
     font-size: 16px;
     font-weight: 300;
     width: 40rem;
@@ -290,7 +294,7 @@ input{
         width: 16rem;
         margin: auto;
         font-weight: 300;
-        color: #E5FCF5;
+        color: var(--sWhite);
         font-size: 16px;
     }
 
@@ -306,7 +310,7 @@ input{
     }
 
     .image-bg-left {
-        background-color: #E5FCF5;
+        background-color: var(--sWhite);
         width: 31vh;
         border-radius: 16px;
         margin: auto;
@@ -325,7 +329,7 @@ input{
     }
 
     .container {
-        background-color: #000000;
+        background-color: var(--black);
         height: 100vh;
         overflow: hidden;
         width: 100vh;
@@ -382,7 +386,7 @@ input{
         /* width: 60rem; */
     }
     .modal-header-subtitle{
-        color: #3c3c3c;
+        color: var(--sBlack);
         font-size: 16px;
         font-weight: 300;
         width: 22rem;
@@ -409,7 +413,7 @@ input{
     }
 
     .Button {
-        background-color: #10c10a;
+        background-color: var(--green);
         color: white;
         padding: 16px 40px;
         font-size: 18px;
@@ -433,7 +437,7 @@ input{
     }
 
     .image-bg-left {
-        background-color: #E5FCF5;
+        background-color: var(--sWhite);
         width: 31vh;
         border-radius: 16px;
         margin: auto;
@@ -484,7 +488,7 @@ input{
     }
 
     .Button {
-        background-color: #10c10a;
+        background-color: var(--green);
         color: white;
         padding: 16px 40px;
         font-size: 18px;
@@ -509,7 +513,7 @@ input{
     }
 
     .image-bg-left {
-        background-color: #E5FCF5;
+        background-color: var(--sWhite);
         width: 31vh;
         border-radius: 16px;
         margin: auto;
