@@ -214,6 +214,15 @@ p {
 }
 input{
     padding-left: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+}
+input.value{
+    padding-left: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
 }
 
 .Patterns-dots {
@@ -414,7 +423,7 @@ input{
 
     .Button {
         background-color: var(--green);
-        color: white;
+        color: var(--black);
         padding: 16px 40px;
         font-size: 18px;
         font-weight: 500;
@@ -489,7 +498,7 @@ input{
 
     .Button {
         background-color: var(--green);
-        color: white;
+        color: var(--black);
         padding: 16px 40px;
         font-size: 18px;
         font-weight: 500;

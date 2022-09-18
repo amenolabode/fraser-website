@@ -25,7 +25,7 @@ const Waitlist = () => {
         email: email,
       })
         .then(() => {
-          alert("Welcome to the good side");
+          alert("Thank you for joining our waitlist. We will keep you updated once we launch. <br/> Welcome to the good side.");
         })
         .catch((error) => {
           alert(error.message);
