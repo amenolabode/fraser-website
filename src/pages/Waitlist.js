@@ -58,6 +58,7 @@ const Waitlist = () => {
                 Do you want to travel between cities comfortably, conveniently
                 and affordably, use Fraser.
                 <br />
+                <br />
                 Be the first to know when we launch.
               </p>
             </div>
