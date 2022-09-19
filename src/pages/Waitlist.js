@@ -4,7 +4,7 @@ import STYLE from "./../styles/Waitlist.css";
 import IMAGE from "./../images/Homepage.png";
 import { Col, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import { db } from "../components/Firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { async } from "@firebase/util";
 
 const Waitlist = () => {
@@ -23,9 +23,10 @@ const Waitlist = () => {
         firstname: firstName,
         lastname: lastName,
         email: email,
+        CreatedAt: serverTimestamp()
       })
         .then(() => {
-          alert("Thank you for joining our waitlist. We will keep you updated once we launch. <br/> Welcome to the good side.");
+          alert("Thank you for joining our waitlist. We will keep you updated once we launch. Welcome to the good side.");
         })
         .catch((error) => {
           alert(error.message);
