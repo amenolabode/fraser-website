@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./../styles/Waitlist.css";
 import STYLE from "./../styles/Waitlist.css";
 import IMAGE from "./../images/Homepage.png";
@@ -6,12 +6,21 @@ import { Col, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import { db } from "../components/Firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { async } from "@firebase/util";
+import BeatLoader from "react-spinners/BeatLoader";
+
 
 const Waitlist = () => {
   const [modal, openModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  // useEffect(()=>{
+  //   setLoading(true)
+  //   setTimeout(()=>{
+  //     setLoading(true);
+  //   }, 5000)
+  // },[])
 
   const usersCollectionRef = collection(db, "users");
 
@@ -19,14 +28,18 @@ const Waitlist = () => {
     e.preventDefault();
     if (firstName.length !== 0 && lastName.length !== 0 && email.length !== 0) {
       //   alert("firebase runs");
+      setLoading(true);
       await addDoc(usersCollectionRef, {
         firstname: firstName,
         lastname: lastName,
         email: email,
-        CreatedAt: serverTimestamp()
+        CreatedAt: serverTimestamp(),
       })
         .then(() => {
-          alert("Thank you for joining our waitlist. We will keep you updated once we launch. Welcome to the good side.");
+          setLoading(false);
+          alert(
+            "Thank you for joining our waitlist. We will keep you updated once we launch. Welcome to the good side."
+          );
         })
         .catch((error) => {
           alert(error.message);
@@ -163,14 +176,12 @@ const Waitlist = () => {
                         </div>
                       </Col>
                     </Row>
+
                     <button
                       className="modal-button Button"
-                      // onClick={() => {
-                      //   handleSubmit();
-                      // }}
                       type="submit"
                     >
-                      Join Waitlist
+                      {loading? <BeatLoader color={"#000000"} loading={loading} size={15} /> : "Join Waitlist"}
                     </button>
                   </form>
                 </ModalBody>
@@ -178,7 +189,9 @@ const Waitlist = () => {
 
               {/* Button */}
             </div>
-            <button
+
+            
+              <button
               className="Button"
               onClick={() => {
                 openModal(true);
@@ -186,6 +199,8 @@ const Waitlist = () => {
             >
               Get Early Access
             </button>
+            
+            
             <div className="image-container">
               <div className="image-bg-left">
                 <div className="image-bg">
